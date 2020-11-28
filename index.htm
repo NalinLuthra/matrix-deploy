@@ -1,10 +1,24 @@
 <html>
-  <head>
+
+<head>
     <title>Video stream sample</title>
-  </head>
-  <body>
-    <video id="videoPlayer" controls muted="muted" autoplay> 
-      <source src="/video" type="video/mp4">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <button id="set_video">Click Here to set video</button>
+    <input id="video_name"></input>
+    <video style="height: 50vh; margin: 100px;" id="videoPlayer" controls muted="muted" autoplay> 
+      <!-- <source src="/video" type="video/mp4"> -->
     </video>
-  </body>
+
+    <script>
+        $('#set_video').click(() => {
+            $('video').attr('src', '/player' + '?name=' + $('#video_name').val() + '.mp4')
+            console.log($('video'))
+        })
+    </script>
+</body>
+
 </html>
